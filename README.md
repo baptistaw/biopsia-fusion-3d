@@ -20,6 +20,8 @@ Ver online: https://baptistaw.github.io/biopsia-fusion-3d/
 
 Tiene controles para reproducir, pausar, ir a cualquier paso y volver al inicio. También se puede girar y hacer zoom, y funciona en el celular.
 
+Las pantallas de la ecografía y del software de fusión se pueden agrandar en cualquier momento, incluso con la animación en marcha, para ver el detalle: se toca la pantalla o su botón de agrandar, se pasa de una a la otra con el botón de cambio y se vuelve con «Achicar» o la tecla Esc.
+
 ## Uso sin conexión
 
 `index.html` es un único archivo autocontenido. Se puede descargar y abrir sin internet en cualquier navegador moderno con WebGL.
