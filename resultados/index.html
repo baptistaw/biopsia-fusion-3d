@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="author" content="Dr. William Baptista">
+<title>Biopsia por fusión en cifras</title>
+<meta name="description" content="Resultados de la biopsia de próstata transperineal por fusión de resonancia y ecografía del equipo del Dr. Daniel Porto, para pacientes y para médicos.">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}*,*::before,*::after{box-sizing:border-box}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head><body>
+<title>Biopsia por fusión en cifras</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Informe clínico de una sola columna, con dos lecturas (pacientes / médicos) del mismo dato; mismos tokens que los visores 3D */
+:root{
+  --bg:#eef1f2; --panel:#fbfcfc; --fg:#1d2629; --muted:#5d6b70; --line:#d5dcde; --accent:#a8482f; --accent-soft:#f3e1da;
+  --g-none:#c5ced2; --g-low:#c25a36; --g-sig:#8a2812; --g-isup4:#661b0a; --g-isup5:#451105; --ref:#5d6b70;
+  --draft-bg:#fff4d6; --draft-fg:#6b4a00; --on-mark:#fbfcfc;
+  --f-display:"Newsreader", Georgia, "Times New Roman", serif;
+  --f-body:"Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#101517; --panel:#161d20; --fg:#e4eaec; --muted:#93a3a8; --line:#2a3439; --accent:#e58a6e; --accent-soft:#3a2520;
+  --g-none:#3a474d; --g-low:#c25e3c; --g-sig:#f0a07f; --g-isup4:#f6c3aa; --g-isup5:#fbe3d5; --ref:#7f9096;
+  --draft-bg:#3a2f12; --draft-fg:#f3d58b; --on-mark:#101517; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#101517; --panel:#161d20; --fg:#e4eaec; --muted:#93a3a8; --line:#2a3439; --accent:#e58a6e; --accent-soft:#3a2520;
+  --g-none:#3a474d; --g-low:#c25e3c; --g-sig:#f0a07f; --g-isup4:#f6c3aa; --g-isup5:#fbe3d5; --ref:#7f9096;
+  --draft-bg:#3a2f12; --draft-fg:#f3d58b; --on-mark:#101517; color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.55;-webkit-text-size-adjust:100%}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 56px}
+h1,h2,h3{font-family:var(--f-display);font-weight:600;line-height:1.15;text-wrap:balance;margin:0}
+h1{font-size:clamp(34px,6vw,52px)}
+h2{font-size:clamp(24px,3.6vw,32px)}
+h3{font-size:19px}
+p{margin:0}
+.num,.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+.draft{display:flex;gap:10px;align-items:flex-start;background:var(--draft-bg);color:var(--draft-fg);border-radius:4px;padding:9px 12px;font-size:13.5px;line-height:1.4;margin-bottom:22px}
+.draft b{white-space:nowrap}
+header{display:grid;gap:10px;margin-bottom:22px}
+.eyebrow{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.lede{font-size:18px;color:var(--muted);max-width:60ch}
+.lede b{color:var(--fg);font-weight:700}
+
+.tabs{display:inline-flex;gap:4px;padding:4px;background:var(--panel);border:1px solid var(--line);border-radius:999px;margin-top:6px;justify-self:start;max-width:100%}
+.tabs a{display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border-radius:999px;text-decoration:none;color:var(--muted);font-weight:700;font-size:15px}
+.tabs a[aria-current="page"]{background:var(--accent);color:var(--panel)}
+.tabs a:hover:not([aria-current="page"]){color:var(--fg)}
+.tabs svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+section.blk{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:clamp(18px,3.4vw,32px);display:grid;gap:16px;align-content:start;margin-top:16px;min-width:0}
+.blk > p.k{max-width:62ch}
+.kicker{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(18px,3vw,36px);align-items:center}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+.note{font-size:13px;color:var(--muted);line-height:1.5;max-width:75ch}
+.chart{position:relative;min-width:0;width:100%}
+.chart svg{display:block;overflow:visible}
+.chart text{fill:var(--fg);font-family:var(--f-body)}
+.chart .t-muted{fill:var(--muted)}
+.chart .t-mono{font-family:var(--f-mono)}
+
+/* Pacientes */
+.big{font-family:var(--f-display);font-size:clamp(56px,10vw,84px);line-height:.95;font-weight:600;color:var(--g-sig)}
+.legend{display:grid;gap:12px}
+.leg{display:grid;grid-template-columns:22px 56px 1fr;gap:10px;align-items:baseline}
+.leg i{width:16px;height:16px;border-radius:3px;display:inline-block;transform:translateY(2px)}
+.leg .n{font-family:var(--f-mono);font-size:22px;font-weight:600;font-variant-numeric:tabular-nums}
+.leg p{font-size:15.5px}
+.leg small{display:block;color:var(--muted);font-size:13.5px}
+.rowp{display:grid;grid-template-columns:150px minmax(0,1fr);gap:14px;align-items:center;padding-block:10px;border-top:1px solid var(--line)}
+.rowp:first-of-type{border-top:0}
+.rowp .lab b{display:block;font-size:17px}
+.rowp .lab span{color:var(--muted);font-size:13.5px}
+.rowp .res{font-size:15px;margin-top:4px}
+.rowp .res b{font-family:var(--f-mono);color:var(--g-sig);font-size:17px}
+@media (max-width:560px){.rowp{grid-template-columns:1fr;gap:6px}}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:760px){.facts{grid-template-columns:1fr}}
+.fact{display:grid;gap:6px;align-content:start;border-top:3px solid var(--g-sig);padding-top:12px}
+.fact .v{font-family:var(--f-display);font-size:30px;font-weight:600;line-height:1}
+.fact p{font-size:15px}
+.path{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;counter-reset:st}
+.stn{position:relative;padding:14px 16px 16px;border:1px solid var(--line);background:var(--bg);display:grid;gap:6px;align-content:start}
+.stn + .stn{border-left:0}
+.stn:first-child{border-radius:6px 0 0 6px}.stn:last-child{border-radius:0 6px 6px 0}
+.stn h3{font-size:18px}
+.stn .who{font-size:14.5px;line-height:1.45}
+.stn .who span{color:var(--muted)}
+.stn svg{width:26px;height:26px;fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:760px){.path{grid-template-columns:1fr}.stn + .stn{border-left:1px solid var(--line);border-top:0}.stn:first-child{border-radius:6px 6px 0 0}.stn:last-child{border-radius:0 0 6px 6px}}
+.cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:4px;background:var(--accent);color:var(--panel);font-weight:700;text-decoration:none}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* Médicos */
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+@media (max-width:860px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:14px 16px;display:grid;gap:4px;align-content:start;min-width:0}
+.kpi .l{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.kpi .v{font-family:var(--f-mono);font-size:clamp(24px,3.4vw,32px);font-weight:600;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .s{font-size:13px;color:var(--muted);font-family:var(--f-mono)}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+td.r,th.r{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+details summary{cursor:pointer;color:var(--accent);font-weight:700;font-size:14px}
+details[open] summary{margin-bottom:8px}
+.pend{border:1px dashed var(--line);border-radius:6px;padding:14px 16px;display:grid;gap:8px;background:var(--bg)}
+.pend ul{margin:0;padding-left:18px;display:grid;gap:3px;font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:13px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);background:var(--bg)}
+.chip b{font-family:var(--f-mono)}
+.legrow{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13.5px;color:var(--muted)}
+.legrow span{display:inline-flex;align-items:center;gap:6px}
+.legrow i{width:12px;height:12px;border-radius:2px;display:inline-block}
+.legrow i.line{height:0;width:18px;border-top:2px solid;border-radius:0}
+.legrow i.dash{height:0;width:18px;border-top:2px dashed;border-radius:0}
+.legrow i.tick{width:2px;height:14px;border-radius:0}
+footer{margin-top:28px;display:grid;gap:8px;font-size:13px;color:var(--muted)}
+footer .dev{color:var(--fg);font-weight:700}
+
+#tip{position:fixed;z-index:20;pointer-events:none;background:var(--fg);color:var(--panel);font-size:13px;line-height:1.35;padding:7px 9px;border-radius:4px;max-width:260px;box-shadow:0 6px 18px rgba(0,0,0,.2)}
+#tip b{font-family:var(--f-mono)}
+[data-tip]{cursor:default}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Biopsia de próstata por fusión · Equipo del Dr. Daniel Porto</div>
+    <h1>Nuestros resultados</h1>
+    <p class="lede" id="lede"></p>
+    <nav class="tabs" aria-label="Elegí la lectura">
+      <a href="#pacientes" id="tab-pacientes"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7.5" r="3.5"/><path d="M5 20c0-4 3.1-6.5 7-6.5s7 2.5 7 6.5"/></svg>Para pacientes</a>
+      <a href="#medicos" id="tab-medicos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Para médicos</a>
+    </nav>
+  </header>
+
+  <!-- ───────────────────────────── Pacientes ───────────────────────────── -->
+  <main id="v-pacientes" hidden>
+    <section class="blk" aria-labelledby="p1">
+      <div class="kicker">El resultado de la biopsia</div>
+      <h2 id="p1">De cada 100 hombres que se biopsiaron con nosotros</h2>
+      <div class="two">
+        <div class="chart" id="c-waffle" role="img"></div>
+        <div class="legend" id="waffle-leg"></div>
+      </div>
+      <p class="note">La biopsia es la única forma de saber si hay cáncer y de qué tipo. Un cáncer de bajo grado crece muy despacio: muchas veces alcanza con controles periódicos (vigilancia activa), según cada caso.</p>
+    </section>
+
+    <section class="blk" aria-labelledby="p2">
+      <div class="kicker">Antes de la biopsia</div>
+      <h2 id="p2">La resonancia anticipa qué vamos a encontrar</h2>
+      <p class="k">La resonancia da un puntaje de sospecha del 1 al 5, llamado PI-RADS. Cuanto más alto es, más probable es encontrar un cáncer que conviene tratar.</p>
+      <div id="c-people"></div>
+      <p class="note" id="people-note"></p>
+    </section>
+
+    <section class="blk" aria-labelledby="p3">
+      <div class="kicker">Cómo la hacemos</div>
+      <h2 id="p3">Por la piel del periné, sin pasar por el recto</h2>
+      <div class="facts" id="facts"></div>
+    </section>
+
+    <section class="blk" aria-labelledby="p4">
+      <div class="kicker">Quiénes la hacen</div>
+      <h2 id="p4">El mismo equipo en cada paso</h2>
+      <p class="k">La resonancia, la biopsia y el análisis de las muestras los hacen siempre las mismas personas. Eso hace que los resultados sean más parejos y comparables.</p>
+      <div class="path" id="path"></div>
+    </section>
+
+    <section class="blk cta" aria-label="Ver la animación">
+      <div><h3>¿Cómo es la biopsia por dentro?</h3><p class="note">Una animación 3D muestra cada paso, desde la posición en la camilla hasta el resultado.</p></div>
+      <a class="btn" href="https://baptistaw.github.io/biopsia-fusion-3d/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5l12 7-12 7z"/></svg>Ver la animación</a>
+    </section>
+    <p class="note" style="margin-top:14px">Estos números describen a un grupo de pacientes. No predicen el resultado de una persona en particular: tu urólogo te va a explicar qué significan en tu caso.</p>
+  </main>
+
+  <!-- ───────────────────────────── Médicos ───────────────────────────── -->
+  <main id="v-medicos" hidden>
+    <div class="kpis" id="kpis"></div>
+
+    <section class="blk" aria-labelledby="m1">
+      <div class="kicker">PI-RADS y resultado</div>
+      <h2 id="m1">A mayor PI-RADS, más cáncer clínicamente significativo</h2>
+      <div class="legrow" id="ladder-leg"></div>
+      <div class="chart" id="c-ladder" role="img"></div>
+      <p class="note" id="ladder-note"></p>
+    </section>
+
+    <div class="two" style="align-items:stretch;margin-top:0">
+      <section class="blk" aria-labelledby="m2">
+        <div class="kicker">Grado en los positivos</div>
+        <h2 id="m2">Casi la mitad de los cánceres hallados es ISUP 1</h2>
+        <div class="chart" id="c-isup" role="img"></div>
+        <div class="legrow" id="isup-leg"></div>
+        <p class="note">Gleason 7 no diferenciado (3+4 vs 4+3) en los informes históricos: se clasificó como ISUP 2 (criterio conservador), por eso no aparece ISUP 3.</p>
+      </section>
+      <section class="blk" aria-labelledby="m3">
+        <div class="kicker">Evolución</div>
+        <h2 id="m3">Desde 2024, más csPCa y menos indolente</h2>
+        <div class="legrow" id="trend-leg"></div>
+        <div class="chart" id="c-trend" role="img"></div>
+        <p class="note" id="trend-note"></p>
+      </section>
+    </div>
+
+    <section class="blk" aria-labelledby="m4">
+      <div class="kicker">Registro prospectivo</div>
+      <h2 id="m4">Lo que suma el registro estructurado</h2>
+      <div id="prosp"></div>
+    </section>
+
+    <section class="blk" aria-labelledby="m5">
+      <div class="kicker">Circuito único</div>
+      <h2 id="m5">Mismo radiólogo, mismo operador, misma patóloga</h2>
+      <p class="k">El 100 % de los casos pasa por el mismo radiólogo, el mismo equipo de punción y la misma patóloga. Eso le da al dato alta validez interna, sin ruido entre observadores.</p>
+      <div class="path" id="path-m"></div>
+    </section>
+
+    <section class="blk" aria-labelledby="m6">
+      <div class="kicker">Cohorte y datos</div>
+      <h2 id="m6">Características y métodos</h2>
+      <div class="chips" id="cohort"></div>
+      <details><summary>Tabla de datos de los gráficos</summary><div class="tbl" id="tables"></div></details>
+      <details><summary>Definiciones y métodos</summary><div class="note" id="methods"></div></details>
+    </section>
+  </main>
+
+  <footer>
+    <span class="dev">Página desarrollada por el Dr. William Baptista</span>
+    <span id="src"></span>
+  </footer>
+</div>
+<div id="tip" hidden></div>
+
+<script type="application/json" id="datos">{"generado": "2026-11-09 03:48", "fuente": "cohorte_congelada_v1 (DIAGFUSION-Investigacion, WP1)", "meta": {"sesiones": 441, "pacientes": 401, "con_ap": 437, "legacy": 441, "prospectivas": 0, "prospectivas_con_ap": 0, "desde": "2021-01", "hasta": "2026-04", "prospectivas_desde": null, "fuera_de_rango_o_sin_fecha": 2}, "global": {"n": 437, "cancer": 227, "cs": 121, "ind": 101, "cancer_sin_isup": 5, "con_pirads": 406}, "por_pirads": [{"pirads": 0, "n": 31, "cancer": 19, "cs": 9, "ind": 8}, {"pirads": 2, "n": 4, "cancer": 0, "cs": 0, "ind": 0}, {"pirads": 3, "n": 83, "cancer": 25, "cs": 5, "ind": 19}, {"pirads": 4, "n": 251, "cancer": 123, "cs": 59, "ind": 62}, {"pirads": 5, "n": 68, "cancer": 60, "cs": 48, "ind": 12}], "isup": [{"isup": 0, "n": 5}, {"isup": 1, "n": 101}, {"isup": 2, "n": 88}, {"isup": 4, "n": 15}, {"isup": 5, "n": 18}], "por_anio": [{"anio": 2021, "sesiones": 60, "con_ap": 60, "cancer": 27, "cs": 14, "ind": 13, "pirads45": 35, "con_pirads": 52}, {"anio": 2022, "sesiones": 89, "con_ap": 89, "cancer": 49, "cs": 19, "ind": 30, "pirads45": 71, "con_pirads": 87}, {"anio": 2023, "sesiones": 96, "con_ap": 96, "cancer": 51, "cs": 19, "ind": 29, "pirads45": 73, "con_pirads": 90}, {"anio": 2024, "sesiones": 91, "con_ap": 91, "cancer": 48, "cs": 36, "ind": 10, "pirads45": 71, "con_pirads": 85}, {"anio": 2025, "sesiones": 88, "con_ap": 86, "cancer": 43, "cs": 26, "ind": 17, "pirads45": 57, "con_pirads": 77}, {"anio": 2026, "sesiones": 17, "con_ap": 15, "cancer": 9, "cs": 7, "ind": 2, "pirads45": 12, "con_pirads": 15}], "cohorte": {"edad": {"p25": 60.0, "mediana": 64.0, "p75": 69.0, "n": 435}, "psa": {"p25": 4.6, "mediana": 6.0, "p75": 8.38, "n": 417}, "volumen": {"p25": 41.0, "mediana": 55.0, "p75": 77.0, "n": 422}, "psad": {"p25": 0.07189999999999999, "mediana": 0.1, "p75": 0.15, "n": 410}, "cilindros": null}, "abordaje": {"TP": 441}, "anestesia": null, "guiado": {"SOFTWARE_FUSION": 441}, "rebiopsia": {"n": 41, "n_ap": 41, "cancer": 21, "cs": 9, "primera_ap": 396, "primera_cancer": 206, "primera_cs": 112}, "incremental_prospectivo": null, "vpp_lesion": null, "seguridad": null, "pieza_quirurgica": null, "equipo": null}</script>
+<script>
+(() => {
+const D = JSON.parse(document.getElementById('datos').textContent);
+const NS = 'http://www.w3.org/2000/svg';
+const $ = id => document.getElementById(id);
+const nf = (x, d = 1) => Number(x).toLocaleString('es-UY', { minimumFractionDigits: d, maximumFractionDigits: d });
+const pc = (k, n, d = 1) => n ? nf(k / n * 100, d) + ' %' : '–';
+const MES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','setiembre','octubre','noviembre','diciembre'];
+const ym = s => { if (!s) return ''; const [y, m] = s.split('-'); return `${MES[+m - 1]} de ${y}`; };
+const ymShort = s => { if (!s) return ''; const [y, m] = s.split('-'); return `${m}/${y.slice(2)}`; };
+function wilson(k, n, z = 1.96) {
+  if (!n) return [NaN, NaN];
+  const p = k / n, d = 1 + z * z / n, c = (p + z * z / (2 * n)) / d, h = z * Math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / d;
+  return [Math.max(0, c - h) * 100, Math.min(1, c + h) * 100];
+}
+const ci = (k, n) => { const [a, b] = wilson(k, n); return `${nf(a)}–${nf(b)}`; };
+function el(tag, attrs = {}, parent, text) {
+  const e = document.createElementNS(NS, tag);
+  for (const [k, v] of Object.entries(attrs)) if (v !== undefined && v !== null) e.setAttribute(k, v);
+  if (text !== undefined) e.textContent = text;
+  if (parent) parent.appendChild(e);
+  return e;
+}
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+
+// ── Datos derivados ────────────────────────────────────────────────────────
+const G = D.global, M = D.meta;
+const noCa = G.n - G.cancer;
+const PR = Object.fromEntries((D.por_pirads || []).map(r => [r.pirads, r]));
+const TEAM = {
+  rm:   { t: 'Resonancia', icon: '<rect x="3" y="5" width="18" height="14" rx="7"/><circle cx="12" cy="12" r="3"/>',
+          who: [['Mismo radiólogo en todos los informes', '']] },
+  bx:   { t: 'Biopsia', icon: '<path d="M4 20l9-9M13 11l2-2 4 4-2 2zM15 9l3-3"/>',
+          who: [['Dr. Daniel Porto', 'jefe de equipo, urología'], ['Dr. Diego Fiorella', 'urólogo, operador principal'], ['Dr. William Baptista', 'anestesiología'],
+                ['Dr. Pedro Kaitasoff', 'ecografía'], ['Lic. K. González, Lic. P. Silva y Lic. V. Duarte', 'instrumentación']] },
+  ap:   { t: 'Anatomía patológica', icon: '<circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5M8.5 11h5M11 8.5v5"/>',
+          who: [['Dra. María Luisa Musto', 'patóloga']] },
+};
+
+// ── Tooltip ────────────────────────────────────────────────────────────────
+const tip = $('tip');
+function showTip(e, html) { tip.innerHTML = html; tip.hidden = false; moveTip(e); }
+function moveTip(e) {
+  const r = tip.getBoundingClientRect(); let x, y;
+  if (e.clientX !== undefined && e.type.startsWith('pointer')) { x = e.clientX + 14; y = e.clientY + 14; }
+  else { const b = e.target.getBoundingClientRect(); x = b.left + b.width / 2; y = b.bottom + 8; }
+  x = Math.min(x, innerWidth - r.width - 8); y = Math.min(y, innerHeight - r.height - 8);
+  tip.style.left = Math.max(8, x) + 'px'; tip.style.top = Math.max(8, y) + 'px';
+}
+document.addEventListener('pointerover', e => { const t = e.target.closest('[data-tip]'); if (t) showTip(e, t.dataset.tip); });
+document.addEventListener('pointermove', e => { if (!tip.hidden && e.target.closest('[data-tip]')) moveTip(e); });
+document.addEventListener('pointerout', e => { if (e.target.closest('[data-tip]')) tip.hidden = true; });
+document.addEventListener('focusin', e => { const t = e.target.closest('[data-tip]'); if (t) showTip(e, t.dataset.tip); });
+document.addEventListener('focusout', () => { tip.hidden = true; });
+addEventListener('scroll', () => { tip.hidden = true; }, { passive: true });
+
+// ── Encabezado ─────────────────────────────────────────────────────────────
+$('lede').innerHTML = `<b>${M.sesiones.toLocaleString('es-UY')} biopsias</b> en ${M.pacientes.toLocaleString('es-UY')} hombres, entre ${ym(M.desde)} y ${ym(M.hasta)}. Todas por vía transperineal, guiadas por la fusión de resonancia y ecografía 3D.`;
+
+// ── Pacientes: 100 cuadritos ───────────────────────────────────────────────
+function largestRemainder(parts, total = 100) {
+  const s = parts.reduce((a, b) => a + b, 0), raw = parts.map(p => p / s * total), fl = raw.map(Math.floor);
+  let rest = total - fl.reduce((a, b) => a + b, 0);
+  raw.map((r, i) => [r - fl[i], i]).sort((a, b) => b[0] - a[0]).forEach(([, i]) => { if (rest > 0) { fl[i]++; rest--; } });
+  return fl;
+}
+const WCAT = [
+  { k: 'none', c: '--g-none', n: noCa, t: 'no tuvieron cáncer', s: 'La biopsia fue negativa o mostró cambios benignos.' },
+  { k: 'low', c: '--g-low', n: G.ind, t: 'tuvieron un cáncer de bajo grado', s: 'ISUP 1: crece muy despacio y suele controlarse sin operar.' },
+  { k: 'sig', c: '--g-sig', n: G.cs, t: 'tuvieron un cáncer que conviene tratar', s: 'Clínicamente significativo (ISUP 2 o más).' },
+];
+const W100 = largestRemainder(WCAT.map(c => c.n)), WBASE = WCAT.reduce((a, c) => a + c.n, 0);   // biopsias con resultado y grado informados
+function drawWaffle() {
+  const box = $('c-waffle'); box.textContent = '';
+  const w = Math.min(box.clientWidth || 320, 420), gap = 3, cell = (w - gap * 9) / 10;
+  const svg = el('svg', { width: w, height: w, viewBox: `0 0 ${w} ${w}` }, box);
+  let i = 0;
+  WCAT.forEach((c, ci) => {
+    for (let j = 0; j < W100[ci]; j++, i++) {
+      const r = Math.floor(i / 10), col = i % 10;
+      el('rect', { x: col * (cell + gap), y: r * (cell + gap), width: cell, height: cell, rx: 3,
+        fill: css(c.c), 'data-tip': `<b>${W100[ci]} de cada 100</b> ${c.t}<br>${c.n} de ${WBASE} biopsias` }, svg);
+    }
+  });
+  box.setAttribute('aria-label', WCAT.map((c, ci) => `${W100[ci]} de cada 100 ${c.t}`).join('; '));
+}
+$('waffle-leg').innerHTML = WCAT.map((c, ci) => `<div class="leg"><i style="background:var(${c.c})"></i><span class="n">${W100[ci]}</span><p>${c.t}<small>${c.s}</small></p></div>`).join('');
+
+// ── Pacientes: de cada 20 hombres por PI-RADS ──────────────────────────────
+const PEOPLE = [3, 4, 5].filter(p => PR[p] && PR[p].n >= 10).map(p => ({ p, n: PR[p].n, cs: PR[p].cs, of20: Math.round(PR[p].cs / PR[p].n * 20) }));
+const PDESC = { 3: 'sospecha intermedia', 4: 'sospecha alta', 5: 'sospecha muy alta' };
+function person(g, x, y, s, fill, filled) {
+  el('circle', { cx: x + s / 2, cy: y + s * 0.2, r: s * 0.17, fill }, g);
+  el('path', { d: `M${x + s * 0.18} ${y + s * 0.98} v-${s * 0.28} a${s * 0.32} ${s * 0.32} 0 0 1 ${s * 0.64} 0 v${s * 0.28} z`, fill }, g);
+}
+function drawPeople() {
+  const box = $('c-people'); box.textContent = '';
+  for (const r of PEOPLE) {
+    const row = document.createElement('div'); row.className = 'rowp';
+    row.innerHTML = `<div class="lab"><b>PI-RADS ${r.p}</b><span>${PDESC[r.p]}</span><div class="res"><b>${r.of20}</b> de cada 20</div></div><div class="chart"></div>`;
+    box.appendChild(row);
+    const c = row.querySelector('.chart'), w = c.clientWidth || 300, per = w < 360 ? 10 : 20, gap = 2;
+    const s = Math.min(30, (w - gap * (per - 1)) / per), rows = Math.ceil(20 / per);
+    const svg = el('svg', { width: w, height: rows * (s * 1.05) + (rows - 1) * 6, role: 'img', 'aria-label': `PI-RADS ${r.p}: ${r.of20} de cada 20 hombres con cáncer que conviene tratar` }, c);
+    const g = el('g', { 'data-tip': `<b>PI-RADS ${r.p}</b>: ${r.cs} de ${r.n} biopsias (${pc(r.cs, r.n)}) con cáncer clínicamente significativo`, tabindex: 0 }, svg);
+    el('rect', { width: w, height: svg.getAttribute('height'), fill: 'transparent' }, g);
+    for (let k = 0; k < 20; k++) {
+      const x = (k % per) * (s + gap), y = Math.floor(k / per) * (s * 1.05 + 6);
+      person(g, x, y, s, k < r.of20 ? css('--g-sig') : css('--g-none'));
+    }
+  }
+}
+$('people-note').textContent = `Figuras rellenas: hombres en los que la biopsia encontró un cáncer clínicamente significativo, según el puntaje de su resonancia. ${PR[2] ? `Con PI-RADS 2 hubo ${PR[2].n} biopsias y ninguna encontró cáncer significativo.` : ''}`;
+
+// ── Pacientes: hechos y equipo ─────────────────────────────────────────────
+const tp = (D.abordaje && D.abordaje.TP) || 0, cil = D.cohorte && D.cohorte.cilindros;
+const cilV = cil && cil.mediana ? nf(cil.mediana, 0) : '≈ 33', cilT = cil && cil.mediana ? 'cilindros por biopsia (mediana)' : 'cilindros por biopsia, en promedio';
+$('facts').innerHTML = [
+  [pc(tp, M.sesiones, 0), 'de nuestras biopsias son transperineales: la aguja entra por la piel entre el escroto y el ano, a través de una grilla, y no atraviesa el recto. Por eso el riesgo de infección es muy bajo.'],
+  ['0', 'infecciones graves (sepsis) en la experiencia del equipo con esta vía. Desde mayo de 2026 cada complicación se registra de forma sistemática y la vamos a mostrar acá.'],
+  [cilV, `${cilT}: se toman muestras de la zona sospechosa y de toda la glándula (mapeo de Ginsburg), para no dejar zonas sin revisar.`],
+].map(([v, t]) => `<div class="fact"><div class="v">${v}</div><p>${t}</p></div>`).join('');
+const pathHTML = () => Object.values(TEAM).map(s => `<div class="stn"><svg viewBox="0 0 24 24" aria-hidden="true">${s.icon}</svg><h3>${s.t}</h3><div class="who">${s.who.map(([n, r]) => `<div>${n}${r ? ` <span>· ${r}</span>` : ''}</div>`).join('')}</div></div>`).join('');
+$('path').innerHTML = pathHTML(); $('path-m').innerHTML = pathHTML();
+
+// ── Médicos: KPI ───────────────────────────────────────────────────────────
+$('kpis').innerHTML = [
+  ['Sesiones', M.sesiones.toLocaleString('es-UY'), `${M.pacientes} pacientes · ${ymShort(M.desde)}–${ymShort(M.hasta)}`],
+  ['CDR', pc(G.cancer, G.n), `IC95 ${ci(G.cancer, G.n)} · ${G.cancer}/${G.n}`],
+  ['csCDR (ISUP ≥ 2)', pc(G.cs, G.n), `IC95 ${ci(G.cs, G.n)} · ${G.cs}/${G.n}`],
+  ['iPCa (ISUP 1)', pc(G.ind, G.n), `${pc(G.ind, G.cancer)} de los positivos`],
+].map(([l, v, s]) => `<div class="kpi"><span class="l">${l}</span><span class="v">${v}</span><span class="s">${s}</span></div>`).join('');
+
+// ── Médicos: escalera PI-RADS ──────────────────────────────────────────────
+const LAD = [3, 4, 5].filter(p => PR[p] && PR[p].n).map(p => ({ p, n: PR[p].n, k: PR[p].cs, v: PR[p].cs / PR[p].n * 100, ci: wilson(PR[p].cs, PR[p].n) }));
+$('ladder-leg').innerHTML = `<span><i style="background:var(--g-sig);border-radius:50%"></i>csCDR · IC95 %</span>`;
+function drawLadder() {
+  const box = $('c-ladder'); box.textContent = '';
+  const w = box.clientWidth || 600, narrow = w < 520, L = narrow ? 6 : 110, R = 26, rowH = narrow ? 88 : 64, top = 8, H = top + LAD.length * rowH + 30;
+  const X = v => L + (w - L - R) * v / 100;
+  const svg = el('svg', { width: w, height: H }, box);
+  for (const t of [0, 25, 50, 75, 100]) {
+    el('line', { x1: X(t), x2: X(t), y1: top, y2: H - 24, stroke: css('--line'), 'stroke-width': 1 }, svg);
+    el('text', { x: X(t), y: H - 6, 'text-anchor': t === 0 && narrow ? 'start' : t === 100 ? 'end' : 'middle', 'font-size': 12, class: 't-muted t-mono' }, svg, t + ' %');
+  }
+  LAD.forEach((r, i) => {
+    const cy = top + i * rowH + rowH / 2 + (narrow ? 12 : 0);
+    if (narrow) {
+      const t = el('text', { x: 0, y: cy - 36, 'font-size': 14, 'font-weight': 700 }, svg, `PI-RADS ${r.p} `);
+      el('tspan', { 'font-weight': 400, class: 't-muted t-mono', 'font-size': 12 }, t, `· n = ${r.n}`);
+    } else {
+      el('text', { x: 0, y: cy - 2, 'font-size': 15, 'font-weight': 700 }, svg, `PI-RADS ${r.p}`);
+      el('text', { x: 0, y: cy + 15, 'font-size': 12, class: 't-muted t-mono' }, svg, `n = ${r.n}`);
+    }
+    const g = el('g', { tabindex: 0, 'data-tip': `<b>PI-RADS ${r.p}</b><br>csCDR ${nf(r.v)} % (${r.k}/${r.n})<br>IC95 % ${nf(r.ci[0])}–${nf(r.ci[1])}` }, svg);
+    el('rect', { x: L, y: cy - rowH / 2 + 4, width: w - L - R, height: rowH - 8, fill: 'transparent' }, g);
+    el('line', { x1: X(r.ci[0]), x2: X(r.ci[1]), y1: cy, y2: cy, stroke: css('--g-sig'), 'stroke-width': 2, 'stroke-linecap': 'round' }, g);
+    for (const e of r.ci) el('line', { x1: X(e), x2: X(e), y1: cy - 5, y2: cy + 5, stroke: css('--g-sig'), 'stroke-width': 2 }, g);
+    el('circle', { cx: X(r.v), cy, r: 6.5, fill: css('--g-sig'), stroke: css('--panel'), 'stroke-width': 2 }, g);
+    const vx = X(r.v), va = vx - L < 34 ? 'start' : 'middle';
+    el('text', { x: va === 'start' ? Math.max(L, X(r.ci[0])) : vx, y: cy - 13, 'text-anchor': va, 'font-size': 13, 'font-weight': 700, class: 't-mono' }, g, nf(r.v) + ' %');
+  });
+  box.setAttribute('aria-label', LAD.map(r => `PI-RADS ${r.p}: ${nf(r.v)} % (IC95 ${nf(r.ci[0])}–${nf(r.ci[1])})`).join('; '));
+}
+$('ladder-note').textContent = `Proporción de sesiones con cáncer clínicamente significativo (ISUP ≥ 2) según el PI-RADS más alto de la resonancia.${PR[2] ? ` PI-RADS 2: ${PR[2].n} sesiones, ninguna con csPCa.` : ''}`;
+
+// ── Médicos: ISUP en positivos ─────────────────────────────────────────────
+const ISUPC = { 1: '--g-low', 2: '--g-sig', 3: '--g-sig', 4: '--g-isup4', 5: '--g-isup5', 0: '--g-none' };
+const IS = (D.isup || []).filter(r => r.n > 0).sort((a, b) => (a.isup || 9) - (b.isup || 9));
+const isTot = IS.reduce((a, r) => a + r.n, 0);
+const isName = i => i ? `ISUP ${i}` : 'Sin grado';
+function drawIsup() {
+  const box = $('c-isup'); box.textContent = '';
+  const w = box.clientWidth || 400, h = 46, gap = 2, avail = w - gap * (IS.length - 1);
+  const svg = el('svg', { width: w, height: h + 22 }, box);
+  let x = 0;
+  for (const r of IS) {
+    const sw = Math.max(2, avail * r.n / isTot), share = r.n / isTot * 100;
+    el('rect', { x, y: 0, width: sw, height: h, rx: 4, fill: css(ISUPC[r.isup]), tabindex: 0, 'data-tip': `<b>${isName(r.isup)}</b>: ${r.n} (${nf(share)} % de ${isTot} positivos)` }, svg);
+    if (sw > 44) el('text', { x: x + 8, y: h / 2 + 5, 'font-size': 13, 'font-weight': 700, class: 't-mono', style: 'fill:var(--on-mark)' }, svg, nf(share, 0) + ' %');
+    x += sw + gap;
+  }
+  el('text', { x: 0, y: h + 18, 'font-size': 12, class: 't-muted' }, svg, `${isTot} sesiones con cáncer`);
+  box.setAttribute('aria-label', IS.map(r => `${isName(r.isup)} ${r.n}`).join(', '));
+}
+$('isup-leg').innerHTML = IS.map(r => `<span><i style="background:${r.isup ? `var(${ISUPC[r.isup]})` : 'var(--g-none)'}"></i>${isName(r.isup)} · <span class="mono">${r.n}</span></span>`).join('');
+
+// ── Médicos: evolución anual ───────────────────────────────────────────────
+const YR = (D.por_anio || []).filter(r => r.con_ap > 0);
+const lastYm = M.hasta ? +M.hasta.split('-')[1] : 12;
+const partialYear = r => r.anio === +String(M.hasta).slice(0, 4) && lastYm < 12;
+$('trend-leg').innerHTML = `<span><i class="line" style="border-color:var(--g-sig)"></i>csCDR (sobre sesiones con AP)</span><span><i class="dash" style="border-color:var(--g-low)"></i>Fracción indolente (ISUP 1 / positivos)</span>`;
+function drawTrend() {
+  const box = $('c-trend'); box.textContent = '';
+  const w = box.clientWidth || 400, Lm = 46, Rm = 26, top = 12, H = 250, bot = 40;
+  const svg = el('svg', { width: w, height: H }, box);
+  const X = i => Lm + (w - Lm - Rm) * (YR.length === 1 ? 0.5 : i / (YR.length - 1)), Y = v => top + (H - top - bot) * (1 - v / 80);
+  for (const t of [0, 20, 40, 60, 80]) {
+    el('line', { x1: Lm, x2: w - Rm, y1: Y(t), y2: Y(t), stroke: css('--line') }, svg);
+    el('text', { x: Lm - 6, y: Y(t) + 4, 'text-anchor': 'end', 'font-size': 11.5, class: 't-muted t-mono' }, svg, t + ' %');
+  }
+  const series = [
+    { k: 'cs', c: '--g-sig', dash: null, f: r => r.cs / r.con_ap * 100, lab: 'csCDR' },
+    { k: 'ind', c: '--g-low', dash: '6 4', f: r => r.cancer ? r.ind / r.cancer * 100 : null, lab: 'Indolente' },
+  ];
+  for (const s of series) {
+    const pts = YR.map((r, i) => [X(i), s.f(r), r]).filter(p => p[1] !== null);
+    el('path', { d: pts.map((p, i) => `${i ? 'L' : 'M'}${p[0]},${Y(p[1])}`).join(''), fill: 'none', stroke: css(s.c), 'stroke-width': 2, 'stroke-dasharray': s.dash, 'stroke-linejoin': 'round' }, svg);
+    for (const [x, v, r] of pts) {
+      const part = partialYear(r);
+      el('circle', { cx: x, cy: Y(v), r: 5, fill: part ? css('--panel') : css(s.c), stroke: part ? css(s.c) : css('--panel'), 'stroke-width': 2, tabindex: 0,
+        'data-tip': `<b>${r.anio}${part ? ' (parcial)' : ''}</b> · ${s.lab} <b>${nf(v)} %</b><br>${s.k === 'cs' ? `${r.cs}/${r.con_ap} sesiones con AP` : `${r.ind}/${r.cancer} positivos`}` }, svg);
+    }
+  }
+  YR.forEach((r, i) => {
+    el('text', { x: X(i), y: H - 22, 'text-anchor': 'middle', 'font-size': 12, class: 't-mono' }, svg, r.anio);
+    el('text', { x: X(i), y: H - 6, 'text-anchor': 'middle', 'font-size': 11, class: 't-muted t-mono' }, svg, `n=${r.con_ap}${partialYear(r) ? '*' : ''}`);
+  });
+  box.setAttribute('aria-label', YR.map(r => `${r.anio}: csCDR ${pc(r.cs, r.con_ap)}, indolente ${pc(r.ind, r.cancer)}`).join('; '));
+}
+(() => {
+  const pre = YR.filter(r => r.anio < 2024), post = YR.filter(r => r.anio >= 2024);
+  const sum = (a, k) => a.reduce((s, r) => s + r[k], 0);
+  const sh = a => a.map(r => r.pirads45 / r.con_pirads * 100);
+  const all = sh(YR.filter(r => r.con_pirads >= 10));
+  $('trend-note').textContent = pre.length && post.length
+    ? `2021–2023: csCDR ${pc(sum(pre, 'cs'), sum(pre, 'con_ap'))} e indolente ${pc(sum(pre, 'ind'), sum(pre, 'cancer'))}. Desde 2024: ${pc(sum(post, 'cs'), sum(post, 'con_ap'))} y ${pc(sum(post, 'ind'), sum(post, 'cancer'))}. La proporción de PI-RADS 4–5 se mantuvo entre ${nf(Math.min(...all), 0)} y ${nf(Math.max(...all), 0)} %, así que el cambio no se explica por la mezcla de casos. Es una señal descriptiva, sin ajustar; falta descartar un cambio en la forma de informar el Gleason. * Año incompleto.`
+    : '';
+})();
+
+// ── Médicos: registro prospectivo ──────────────────────────────────────────
+(() => {
+  const iy = D.incremental_prospectivo, sg = D.seguridad, hasP = M.prospectivas > 0;
+  const parts = [];
+  if (hasP) parts.push(`<p class="k">${M.prospectivas} sesiones registradas de forma prospectiva desde ${ym(M.prospectivas_desde)}, ${M.prospectivas_con_ap} con anatomía patológica por cilindro.</p>`);
+  if (iy && iy.n_cs > 0) parts.push(`<div class="chips"><span class="chip">csPCa solo en la dirigida <b>${iy.solo_dirigida}</b></span><span class="chip">solo en la sistemática <b>${iy.solo_sistematica}</b></span><span class="chip">en ambas <b>${iy.ambas}</b></span><span class="chip">de <b>${iy.n_cs}</b> sesiones con csPCa</span></div>`);
+  if (sg && sg.sesiones_prospectivas > 0) {
+    const tipos = Object.entries(sg.por_tipo || {}).map(([k, n]) => `${k.toLowerCase().replace(/_/g, ' ')} ${n}`).join(' · ') || 'sin eventos';
+    parts.push(`<div class="chips"><span class="chip">Sesiones con algún evento <b>${sg.sesiones_prospectivas_con_evento}/${sg.sesiones_prospectivas}</b></span><span class="chip">Internación <b>${sg.internacion}</b></span><span class="chip">Consulta en emergencia <b>${sg.emergencia}</b></span></div><p class="note">Por tipo: ${tipos}. Clavien-Dindo: ${Object.entries(sg.clavien || {}).map(([k, n]) => `${k} ${n}`).join(' · ') || '–'}.</p>`);
+  }
+  if (!parts.length || !(iy && iy.n_cs > 0)) parts.push(`<div class="pend"><b>Disponible al actualizar con la base viva de PBP Fusion</b><ul>
+      <li>Rendimiento incremental: csPCa solo en la dirigida, solo en la sistemática o en ambas (anatomía patológica por cilindro).</li>
+      <li>Seguridad con Clavien-Dindo, internaciones, consultas en emergencia y dolor (EVA).</li>
+      <li>Densidad de PSA estructurada y VPP por lesión.</li></ul>
+      <p class="note">En la cohorte histórica los eventos adversos no se registraron de forma estructurada. La experiencia del operador reporta 0 sepsis con la vía transperineal y eventos mayormente Clavien I (dolor, hematuria y hematospermia autolimitados).</p></div>`);
+  $('prosp').innerHTML = parts.join('');
+})();
+
+// ── Médicos: cohorte, tablas y métodos ─────────────────────────────────────
+(() => {
+  const c = D.cohorte || {};
+  const q = (o, d = 0, u = '') => o ? `${nf(o.mediana, d)}${u} (${nf(o.p25, d)}–${nf(o.p75, d)})` : null;
+  $('cohort').innerHTML = [
+    c.edad && ['Edad', q(c.edad, 0, ' años')], c.psa && ['PSA', q(c.psa, 1, ' ng/mL')], c.volumen && ['Volumen', q(c.volumen, 0, ' cc')],
+    c.psad && ['Densidad de PSA', q(c.psad, 2)],
+  ].filter(Boolean).map(([k, v]) => `<span class="chip">${k} <b>${v}</b></span>`).join('');
+  const row = cells => `<tr>${cells.map((x, i) => `<td${i ? ' class="r"' : ''}>${x}</td>`).join('')}</tr>`;
+  $('tables').innerHTML = `
+    <table><thead><tr><th>PI-RADS</th><th class="r">n</th><th class="r">CDR</th><th class="r">csCDR</th><th class="r">IC95 %</th></tr></thead><tbody>
+    ${(D.por_pirads || []).filter(r => r.pirads > 0).map(r => row([r.pirads, r.n, pc(r.cancer, r.n), pc(r.cs, r.n), ci(r.cs, r.n)])).join('')}
+    ${PR[0] ? row(['sin PI-RADS estándar', PR[0].n, pc(PR[0].cancer, PR[0].n), pc(PR[0].cs, PR[0].n), ci(PR[0].cs, PR[0].n)]) : ''}
+    </tbody></table><br>
+    <table><thead><tr><th>Año</th><th class="r">Sesiones</th><th class="r">Con AP</th><th class="r">csCDR</th><th class="r">Indolente / positivos</th><th class="r">PI-RADS 4–5</th></tr></thead><tbody>
+    ${(D.por_anio || []).map(r => row([r.anio + (partialYear(r) ? '*' : ''), r.sesiones, r.con_ap, pc(r.cs, r.con_ap), pc(r.ind, r.cancer), pc(r.pirads45, r.con_pirads)])).join('')}
+    </tbody></table>`;
+  $('methods').innerHTML = `<p><b>Unidad de análisis:</b> sesión de biopsia. <b>Denominador:</b> sesiones con anatomía patológica informativa (n = ${G.n}). <b>csPCa:</b> ISUP ≥ 2. <b>iPCa:</b> ISUP 1 como grado máximo. <b>IC95 %:</b> Wilson. <b>PI-RADS de la sesión:</b> PI-RADS v2.1, el más alto informado; las tasas por PI-RADS excluyen ${PR[0] ? PR[0].n : 0} sesiones con escala no estándar (PRECISE, Likert) o sin PI-RADS.</p>`;
+  $('src').textContent = `Fuente: ${D.fuente || 'base PBP Fusion (DIAGFUSION)'} · ${M.sesiones} sesiones de ${ymShort(M.desde)} a ${ymShort(M.hasta)} · actualizado ${D.generado}. Solo datos agregados, sin información de pacientes.`;
+})();
+
+// ── Vistas (hash) y redibujo ───────────────────────────────────────────────
+const VIEWS = ['pacientes', 'medicos'];
+function route() {
+  const v = VIEWS.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'pacientes';
+  for (const k of VIEWS) { $('v-' + k).hidden = k !== v; $('tab-' + k).setAttribute('aria-current', k === v ? 'page' : 'false'); }
+  draw();
+}
+function draw() {
+  tip.hidden = true;
+  if (!$('v-pacientes').hidden) { drawWaffle(); drawPeople(); }
+  if (!$('v-medicos').hidden) { drawLadder(); drawIsup(); drawTrend(); }
+}
+addEventListener('hashchange', route);
+let rt; new ResizeObserver(() => { clearTimeout(rt); rt = setTimeout(draw, 80); }).observe(document.querySelector('.wrap'));
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', draw);
+new MutationObserver(draw).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+route();
+window.__res = { D, draw };
+})();
+</script>
+</body></html>
