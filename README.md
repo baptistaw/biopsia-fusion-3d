@@ -22,6 +22,10 @@ Tiene controles para reproducir, pausar, ir a cualquier paso y volver al inicio.
 
 Las pantallas de la ecografía y del software de fusión se pueden agrandar en cualquier momento, incluso con la animación en marcha, para ver el detalle: se toca la pantalla o su botón de agrandar, se pasa de una a la otra con el botón de cambio y se vuelve con «Achicar» o la tecla Esc.
 
+## Resultados del equipo
+
+La página [Biopsia por fusión en cifras](https://baptistaw.github.io/biopsia-fusion-3d/resultados/) resume los resultados del circuito de biopsia por fusión del equipo del Dr. Daniel Porto, con una lectura para pacientes y otra para médicos. Muestra solo datos agregados, sin datos de pacientes. Se abre desde el panel de la animación y desde el último paso.
+
 ## Uso sin conexión
 
 `index.html` es un único archivo autocontenido. Se puede descargar y abrir sin internet en cualquier navegador moderno con WebGL.
